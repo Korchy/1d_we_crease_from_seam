@@ -72,7 +72,7 @@ class WECFS:
 
 class WECFS_OT_set_crease(Operator):
     bl_idname = 'wecfs.set_crease'
-    bl_label = 'WE Crease from seam'
+    bl_label = 'WEE Crease from seam'   # don't rename used for convinient search by spacebar
     bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
