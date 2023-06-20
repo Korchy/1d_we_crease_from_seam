@@ -13,7 +13,7 @@ bl_info = {
     "name": "WE Crease from seam",
     "description": "Sets edges marked as UV-Seams with Mean Crease = 1.0 value",
     "author": "Nikita Akimov, Paul Kotelevets",
-    "version": (1, 0, 0),
+    "version": (1, 0, 1),
     "blender": (2, 79, 0),
     "location": "View3D > Tool panel > 1D > WE Crease from seam",
     "doc_url": "https://github.com/Korchy/1d_we_crease_from_seam",
@@ -72,7 +72,7 @@ class WECFS:
 
 class WECFS_OT_set_crease(Operator):
     bl_idname = 'wecfs.set_crease'
-    bl_label = 'Set Crease'
+    bl_label = 'WE Crease from seam'
     bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
