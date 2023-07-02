@@ -13,7 +13,7 @@ bl_info = {
     "name": "WE Crease from seam",
     "description": "Sets edges marked as UV-Seams with Mean Crease = 1.0 value",
     "author": "Nikita Akimov, Paul Kotelevets",
-    "version": (1, 0, 1),
+    "version": (1, 0, 2),
     "blender": (2, 79, 0),
     "location": "View3D > Tool panel > 1D > WE Crease from seam",
     "doc_url": "https://github.com/Korchy/1d_we_crease_from_seam",
@@ -53,6 +53,8 @@ class WECFS:
         for edge in bm.edges:
             if edge.select:
                 edge[crease_layer] = 1.0
+            else:
+                edge[crease_layer] = 0.0
         # save changed data to mesh
         bm.to_mesh(context.object.data)
         # return mode back

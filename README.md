@@ -9,3 +9,8 @@ Sets all edges marked as UV-Seams with Mean Crease = 1.0 value.
 Blender version
 -
 2.79
+
+Version history
+-
+1.0.2
+- Reset all other creases
