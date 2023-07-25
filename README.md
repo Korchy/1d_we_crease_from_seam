@@ -12,5 +12,8 @@ Blender version
 
 Version history
 -
+1.0.3
+- Exclude hidden geometry from processing
+
 1.0.2
 - Reset all other creases
