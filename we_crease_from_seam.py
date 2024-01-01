@@ -90,7 +90,7 @@ class WECFS_PT_panel(Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'TOOLS'
     bl_label = "WE Crease from seam"
-    bl_category = '1D'
+    bl_category = 'NA 1D Tools'
 
     def draw(self, context):
         layout = self.layout
