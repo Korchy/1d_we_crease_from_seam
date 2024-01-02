@@ -13,7 +13,7 @@ bl_info = {
     "name": "WE Crease from seam",
     "description": "Sets edges marked as UV-Seams with Mean Crease = 1.0 value",
     "author": "Nikita Akimov, Paul Kotelevets",
-    "version": (1, 0, 3),
+    "version": (1, 0, 4),
     "blender": (2, 79, 0),
     "location": "View3D > Tool panel > 1D > WE Crease from seam",
     "doc_url": "https://github.com/Korchy/1d_we_crease_from_seam",
@@ -69,12 +69,19 @@ class WECFS:
         for vertex in obj_data.vertices:
             vertex.select = False
 
+    @staticmethod
+    def ui(layout):
+        layout.operator(
+            operator='wecfs.set_crease',
+            icon='BRUSH_CREASE'
+        )
+
 
 # OPERATORS
 
 class WECFS_OT_set_crease(Operator):
     bl_idname = 'wecfs.set_crease'
-    bl_label = 'WEE Crease from seam'   # don't rename used for convinient search by spacebar
+    bl_label = 'WEE Crease from seam'   # don't rename used for convenient search by space bar
     bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
@@ -90,25 +97,25 @@ class WECFS_PT_panel(Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'TOOLS'
     bl_label = "WE Crease from seam"
-    bl_category = 'NA 1D Tools'
+    bl_category = '1D'
 
     def draw(self, context):
-        layout = self.layout
-        layout.operator(
-            operator='wecfs.set_crease',
-            icon='BRUSH_CREASE'
+        WECFS.ui(
+            layout=self.layout
         )
 
 
 # REGISTER
 
-def register():
+def register(ui=True):
     register_class(WECFS_OT_set_crease)
-    register_class(WECFS_PT_panel)
+    if ui:
+        register_class(WECFS_PT_panel)
 
 
-def unregister():
-    unregister_class(WECFS_PT_panel)
+def unregister(ui=True):
+    if ui:
+        unregister_class(WECFS_PT_panel)
     unregister_class(WECFS_OT_set_crease)
 
 

@@ -12,6 +12,9 @@ Blender version
 
 Version history
 -
+1.0.4
+- Integrated to the NA 1D Tools
+
 1.0.3
 - Exclude hidden geometry from processing
 
